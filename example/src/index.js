@@ -1,7 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import { CreateRouter } from 'estafette-router';
+import { Page } from './Page';
 
-import './index.css'
-import App from './App'
+const routes = [
+  { name: 'IndexPage', path: '/', component: Page, exact: true },
+  { name: 'HomePage', path: '/home', component: Page },
+  { name: 'AboutPage', path: '/about-page', component: Page },
+];
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<CreateRouter routes={routes} />, document.getElementById('root'));

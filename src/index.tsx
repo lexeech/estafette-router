@@ -1,23 +1,8 @@
-/**
- * @class ExampleComponent
- */
+export { useParams, useLocation, useHistory, useRouteMatch } from 'react-router-dom';
 
-import * as React from 'react'
+export { parseObject } from './helpers';
+export { useRouterHelpers, Params } from './useRouterHelpers';
 
-import styles from './styles.css'
-
-export type Props = { text: string }
-
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export { CreateRouter, Routes } from './components/CreateRouter';
+export { Redirect } from './components/Redirect';
+export { Link } from './components/Link';
