@@ -14,13 +14,14 @@ export interface Routes {
 interface CreateRouterProps {
   history?: any;
   routes: Routes[];
+  renderSuspense?: React.FC<any>;
 }
 
-export const CreateRouter: React.FC<CreateRouterProps> = ({ history, routes }) => (
+export const CreateRouter: React.FC<CreateRouterProps> = ({ history, routes, renderSuspense }) => (
   <RoutesContext.Provider value={{ routes }}>
     <RoutesGroup history={history}>
       {routes.map(({ name, ...route }) => (
-        <Route key={name} {...route} />
+        <Route key={name} renderSuspense={renderSuspense} {...route} />
       ))}
     </RoutesGroup>
   </RoutesContext.Provider>
