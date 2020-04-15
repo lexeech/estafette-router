@@ -1,6 +1,6 @@
 export { useParams, useLocation, useHistory, useRouteMatch } from 'react-router-dom';
 
-export { parseObject } from './helpers';
+export { getRoute, parseObject } from './helpers';
 export { useRouterHelpers, Params } from './useRouterHelpers';
 
 export { CreateRouter, Routes } from './components/CreateRouter';

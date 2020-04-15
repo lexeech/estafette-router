@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { parseObject } from './helpers';
+import { getRoute as getRouteFromRoutes } from './helpers';
 import { RoutesContext } from './components/RoutesContext';
 
 export type Params = { [key: string]: any };
@@ -9,19 +9,7 @@ export const useRouterHelpers = () => {
   const match = useRouteMatch();
   const { routes } = React.useContext(RoutesContext);
 
-  const getRoute = (name: string, params?: Params): string => {
-    const route = routes.find(item => item.name === name);
-
-    if (route) {
-      let { path } = Object.assign({}, route);
-
-      params && Object.keys(params).map(key => (path = path.replace(`:${key}`, params[key])));
-
-      return params && params.query ? `${path}${parseObject(params.query)}` : path;
-    }
-
-    return '';
-  };
+  const getRoute = (name: string, params?: Params): string => getRouteFromRoutes(routes, name, params);
 
   const getRouteByPath = (): string => {
     const { name = '' } = routes.find(item => item.path === match.path) || {};
