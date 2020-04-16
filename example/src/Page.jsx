@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link, useRouterHelpers } from 'estafette-router';
+import { Link, useRouterHelpers, useHistory } from 'estafette-router';
 
 const LinkText = ({ active, label }) => (active ? <b>{label}</b> : <span>{label}</span>);
 
 export const Page = ({ pageName = 'Page' }) => {
+  const history = useHistory();
   const { getRoute, isRouteActive } = useRouterHelpers();
+
+  const onGoHome = () => history.push('HomePage');
 
   return (
     <div>
@@ -29,6 +32,10 @@ export const Page = ({ pageName = 'Page' }) => {
       </ul>
 
       {pageName}
+
+      <div>
+        <button onClick={onGoHome}>go home</button>
+      </div>
     </div>
   );
 };
