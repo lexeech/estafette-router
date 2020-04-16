@@ -5,15 +5,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "estafette-router": "file:../dist",
-    "react": ">= 16.8",
+    "estafette-router": "link:..",
+    "react": "link:../node_modules/react",
     "react-dom": ">= 16.8",
     "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom"
   }
 }

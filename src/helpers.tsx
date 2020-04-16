@@ -4,11 +4,9 @@ import { Routes } from './components/CreateRouter';
 export const parseObject = (obj: { [key: string]: any }): string => {
   const str = [];
 
-  // eslint-disable-next-line
-  for (const p in obj)
-    if (p) {
-      str.push(`${encodeURIComponent(p)}=${encodeURIComponent(obj[p]) || ''}`);
-    }
+  for (const p in obj) {
+    str.push(`${encodeURIComponent(p)}=${encodeURIComponent(obj[p]) || ''}`);
+  }
 
   return `${str.length > 0 ? '?' : ''}${str.join('&')}`;
 };
@@ -19,9 +17,11 @@ export const getRoute = (routes: Routes[], name: string, params?: Params): strin
   if (route) {
     let { path } = Object.assign({}, route);
 
-    params && Object.keys(params).map(key => (path = path.replace(`:${key}`, params[key])));
+    if (params) {
+      Object.keys(params).map(key => (path = path.replace(`:${key}`, params[key])));
 
-    return params && params.query ? `${path}${parseObject(params.query)}` : path;
+      return params.query ? `${path}${parseObject(params.query)}` : path;
+    }
   }
 
   return '';

@@ -19,7 +19,9 @@ export const Page = ({ pageName = 'Page' }) => {
         </li>
 
         <li>
-          <Link route="AboutPage">{isRouteActive('AboutPage') ? <b>About</b> : <span>About</span>}</Link>
+          <Link route="AboutPage" params={{ query: { debug: 'true' } }}>
+            {isRouteActive('AboutPage') ? <b>About</b> : <span>About</span>}
+          </Link>
         </li>
       </ul>
 

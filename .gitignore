@@ -22,3 +22,4 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 example/yarn.lock
+example/node_modules
