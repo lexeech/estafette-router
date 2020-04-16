@@ -1,26 +1,29 @@
 import React from 'react';
-import { Link, useRouterHelpers, useRouteMatch } from 'estafette-router';
+import { Link, useRouterHelpers } from 'estafette-router';
+
+const LinkText = ({ active, label }) => (active ? <b>{label}</b> : <span>{label}</span>);
 
 export const Page = ({ pageName = 'Page' }) => {
-  const { isRouteActive } = useRouterHelpers();
-  const match = useRouteMatch();
-
-  console.log(match);
+  const { getRoute, isRouteActive } = useRouterHelpers();
 
   return (
     <div>
       <ul>
         <li>
-          <Link route="IndexPage">{isRouteActive('IndexPage') ? <b>Index</b> : <span>Index</span>}</Link>
+          <Link route="IndexPage">
+            <LinkText active={isRouteActive('IndexPage')} label={`Index (path: ${getRoute('IndexPage')})`} />
+          </Link>
         </li>
 
         <li>
-          <Link route="HomePage">{isRouteActive('HomePage') ? <b>Home</b> : <span>Home</span>}</Link>
+          <Link route="HomePage">
+            <LinkText active={isRouteActive('HomePage')} label={`Home (path: ${getRoute('HomePage')})`} />
+          </Link>
         </li>
 
         <li>
           <Link route="AboutPage" params={{ query: { debug: 'true' } }}>
-            {isRouteActive('AboutPage') ? <b>About</b> : <span>About</span>}
+            <LinkText active={isRouteActive('AboutPage')} label={`About (path: ${getRoute('AboutPage')})`} />
           </Link>
         </li>
       </ul>
