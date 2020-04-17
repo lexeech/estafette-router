@@ -1,9 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { Link, useRouterHelpers, useHistory } from 'estafette-router';
 
-const LinkText = ({ active, label }) => (active ? <b>{label}</b> : <span>{label}</span>);
+const LinkText: React.FC<{ active: boolean; label: string }> = ({ active, label }) =>
+  active ? <b>{label}</b> : <span>{label}</span>;
 
-export const Page = ({ pageName = 'Page' }) => {
+export const Page: React.FC<{ pageName?: string }> = ({ pageName = 'Page' }) => {
   const history = useHistory();
   const { getRoute, isRouteActive } = useRouterHelpers();
 

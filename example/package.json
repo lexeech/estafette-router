@@ -1,18 +1,23 @@
 {
   "name": "estafette-router-example",
-  "homepage": "https://vladimirjosan.github.io/estafette-router",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "estafette-router": "link:..",
     "react": "link:../node_modules/react",
     "react-dom": ">= 16.8",
-    "react-scripts": "^1.1.4"
+    "react-scripts-ts": "^3.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.22",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "typescript": "^3.7.2"
   }
 }

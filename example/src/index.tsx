@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { CreateRouter } from 'estafette-router';
 import { Page } from './Page';
 
@@ -9,4 +9,4 @@ const routes = [
   { name: 'AboutPage', path: '/about-page', component: Page },
 ];
 
-ReactDOM.render(<CreateRouter routes={routes} />, document.getElementById('root'));
+render(<CreateRouter routes={routes} />, document.getElementById('root'));
