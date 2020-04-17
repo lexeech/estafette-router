@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link as OldLink } from 'react-router-dom';
 import { parseObject } from '../helpers/helpers';
-import { useRouterHelpers, Params } from '../useRouterHelpers';
+import { useRouterHelpers, Params } from '../useRouterHelpers/useRouterHelpers';
 
 interface Props {
   to?: string;

@@ -1,4 +1,4 @@
-import { parseObject, getRoute } from './helpers';
+import { parseObject, getRoute, getRouteByPath } from './helpers';
 import { Routes } from '..';
 
 describe('helpers.ts', () => {
@@ -65,6 +65,22 @@ describe('helpers.ts', () => {
 
     it('returns empty string in case when did not find', () => {
       const text = getRoute(routes, 'page_TEST_NUMBER', { id: 2 });
+
+      expect(text).toBe('');
+    });
+  });
+
+  describe('getRouteByPath()', () => {
+    const routes = [{ name: 'page_1', path: '/page_1' }] as Routes[];
+
+    it('returns route name by path', () => {
+      const text = getRouteByPath(routes, '/page_1');
+
+      expect(text).toBe('page_1');
+    });
+
+    it('returns empty string in case when did not find', () => {
+      const text = getRouteByPath(routes, 'page_TEST_NUMBER');
 
       expect(text).toBe('');
     });

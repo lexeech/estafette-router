@@ -17,11 +17,11 @@ interface CreateRouterProps {
   renderSuspense?: React.FC<any>;
 }
 
-export const CreateRouter: React.FC<CreateRouterProps> = ({ history, routes, renderSuspense }) => (
+export const CreateRouter: React.FC<CreateRouterProps> = ({ history, routes }) => (
   <RoutesContext.Provider value={{ routes }}>
     <RoutesGroup history={history}>
       {routes.map(({ name, ...route }) => (
-        <Route key={name} renderSuspense={renderSuspense} {...route} />
+        <Route key={name} {...route} />
       ))}
     </RoutesGroup>
   </RoutesContext.Provider>

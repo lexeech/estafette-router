@@ -1,4 +1,4 @@
-import { Params } from '../useRouterHelpers';
+import { Params } from '../useRouterHelpers/useRouterHelpers';
 import { Routes } from '../components/CreateRouter';
 
 export const parseObject = (obj: { [key: string]: any }): string => {
@@ -27,6 +27,12 @@ export const getRoute = (routes: Routes[], name: string, params?: Params): strin
   }
 
   return '';
+};
+
+export const getRouteByPath = (routes: Routes[], path: string): string => {
+  const { name = '' } = routes.find((item) => item.path === path) || {};
+
+  return name;
 };
 
 export default {};
