@@ -11,15 +11,11 @@ interface RouteProps extends Pick<Routes, Exclude<keyof Routes, 'name'>> {
 export const Route: React.FC<RouteProps> = ({ renderSuspense, suspense, component: Component, render, ...route }) => (
   <OldRoute
     {...route}
-    render={({ history, location, match, ...routeProps }): JSX.Element => {
-      console.log(routeProps);
-
-      return (
-        <React.Suspense fallback={renderSuspense || <span>Loading ...</span>}>
-          {typeof render === 'function' ? render(routeProps) : <Component {...routeProps} />}
-        </React.Suspense>
-      );
-    }}
+    render={({ history, location, match, ...routeProps }): JSX.Element => (
+      <React.Suspense fallback={renderSuspense || <span>Loading ...</span>}>
+        {typeof render === 'function' ? render(routeProps) : <Component {...routeProps} />}
+      </React.Suspense>
+    )}
   />
 );
 
