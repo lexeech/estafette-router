@@ -1,5 +1,5 @@
-import { Params } from './useRouterHelpers';
-import { Routes } from './components/CreateRouter';
+import { Params } from '../useRouterHelpers';
+import { Routes } from '../components/CreateRouter';
 
 export const parseObject = (obj: { [key: string]: any }): string => {
   const str = [];
@@ -12,13 +12,13 @@ export const parseObject = (obj: { [key: string]: any }): string => {
 };
 
 export const getRoute = (routes: Routes[], name: string, params?: Params): string => {
-  const route = routes.find(item => item.name === name);
+  const route = routes.find((item) => item.name === name);
 
   if (route) {
     let { path } = { ...route };
 
     if (params) {
-      Object.keys(params).map(key => (path = path.replace(`:${key}`, params[key])));
+      Object.keys(params).map((key) => (path = path.replace(`:${key}`, params[key])));
 
       return params.query ? `${path}${parseObject(params.query)}` : path;
     }
