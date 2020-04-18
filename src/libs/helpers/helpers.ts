@@ -1,5 +1,5 @@
 import { Params } from 'hooks/useRouterHelpers/useRouterHelpers';
-import { Routes } from 'components/CreateRouter';
+import { Routes } from 'components/CreateRouter/CreateRouter';
 
 export const parseObject = (obj: { [key: string]: any }): string => {
   const str = [];

@@ -1,4 +1,4 @@
-import { Routes } from 'components/CreateRouter';
+import { Routes } from 'components/CreateRouter/CreateRouter';
 
 import { parseObject, getRoute, getRouteByPath } from './helpers';
 

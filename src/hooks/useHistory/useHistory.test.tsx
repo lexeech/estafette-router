@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createBrowserHistory } from 'history';
 import { render, fireEvent } from '@testing-library/react';
 
-import { CreateRouter, Routes } from 'components/CreateRouter';
+import { CreateRouter, Routes } from 'components/CreateRouter/CreateRouter';
 
 import { useHistory } from './useHistory';
 

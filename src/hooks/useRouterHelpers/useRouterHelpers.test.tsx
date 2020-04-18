@@ -1,41 +1,27 @@
 import * as React from 'react';
-import { History, createBrowserHistory } from 'history';
+import { createBrowserHistory } from 'history';
 import { render } from '@testing-library/react';
 
-import { CreateRouter } from 'components/CreateRouter';
+import { CreateRouter, Routes } from 'components/CreateRouter/CreateRouter';
 
 import { useRouterHelpers } from './useRouterHelpers';
 
-interface Route {
-  name: string;
-  path: string;
-  component: any;
-}
-
-const createRoutes = ({ history, routes }: { history: History<History.PoorMansUnknown>; routes: Route[] }) => (
-  <CreateRouter history={history} routes={routes} />
-);
-
-const createRoute = ({ history, route }: { history: History<History.PoorMansUnknown>; route: Route }) =>
-  createRoutes({ history, routes: [route] });
-
 describe('useRouterHelpers()', () => {
   const history = createBrowserHistory({});
+
+  const createRoute = (route: Routes) => <CreateRouter history={history} routes={[route]} />;
 
   describe('getRoute()', () => {
     it('renders <a /> with correct link', () => {
       history.push('/test_a_href');
 
       const component = createRoute({
-        history,
-        route: {
-          name: 'test_a_href',
-          path: '/test_a_href',
-          component: () => {
-            const { getRoute } = useRouterHelpers();
+        name: 'test_a_href',
+        path: '/test_a_href',
+        component: () => {
+          const { getRoute } = useRouterHelpers();
 
-            return <a href={getRoute('test_a_href')}>test url</a>;
-          },
+          return <a href={getRoute('test_a_href')}>test url</a>;
         },
       });
 
@@ -50,15 +36,12 @@ describe('useRouterHelpers()', () => {
       history.push('/test_route_name');
 
       const component = createRoute({
-        history,
-        route: {
-          name: 'test_route_name',
-          path: '/test_route_name',
-          component: () => {
-            const { getRouteByPath } = useRouterHelpers();
+        name: 'test_route_name',
+        path: '/test_route_name',
+        component: () => {
+          const { getRouteByPath } = useRouterHelpers();
 
-            return <span>{getRouteByPath()}</span>;
-          },
+          return <span>{getRouteByPath()}</span>;
         },
       });
 
@@ -71,15 +54,12 @@ describe('useRouterHelpers()', () => {
   describe('isUrlActive()', () => {
     const createComponent = (urls: string | string[]) =>
       createRoute({
-        history,
-        route: {
-          name: 'test_active',
-          path: '/test_active',
-          component: () => {
-            const { isUrlActive } = useRouterHelpers();
+        name: 'test_active',
+        path: '/test_active',
+        component: () => {
+          const { isUrlActive } = useRouterHelpers();
 
-            return <span>{isUrlActive(urls) ? 'active' : 'unactive'}</span>;
-          },
+          return <span>{isUrlActive(urls) ? 'active' : 'unactive'}</span>;
         },
       });
 
@@ -119,15 +99,12 @@ describe('useRouterHelpers()', () => {
   describe('isRouteActive()', () => {
     const createComponent = (names: string | string[]) =>
       createRoute({
-        history,
-        route: {
-          name: 'test_active',
-          path: '/test_active',
-          component: () => {
-            const { isRouteActive } = useRouterHelpers();
+        name: 'test_active',
+        path: '/test_active',
+        component: () => {
+          const { isRouteActive } = useRouterHelpers();
 
-            return <span>{isRouteActive(names) ? 'active' : 'unactive'}</span>;
-          },
+          return <span>{isRouteActive(names) ? 'active' : 'unactive'}</span>;
         },
       });
 
