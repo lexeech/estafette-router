@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createBrowserHistory } from 'history';
 import { render } from '@testing-library/react';
 import { useHistory } from './useHistory';
-import { CreateRouter, Routes } from '../components/CreateRouter';
+import { CreateRouter, Routes } from '../../components/CreateRouter';
 import { fireEvent } from '@testing-library/react';
 
 describe('useRouterHelpers()', () => {

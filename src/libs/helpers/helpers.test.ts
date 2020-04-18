@@ -1,5 +1,5 @@
 import { parseObject, getRoute, getRouteByPath } from './helpers';
-import { Routes } from '..';
+import { Routes } from '../..';
 
 describe('helpers.ts', () => {
   describe('parseObject()', () => {
