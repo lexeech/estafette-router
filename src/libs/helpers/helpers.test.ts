@@ -1,5 +1,6 @@
+import { Routes } from 'components/CreateRouter';
+
 import { parseObject, getRoute, getRouteByPath } from './helpers';
-import { Routes } from '../..';
 
 describe('helpers.ts', () => {
   describe('parseObject()', () => {

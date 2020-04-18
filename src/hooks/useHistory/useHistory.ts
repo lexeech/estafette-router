@@ -1,5 +1,6 @@
 import { useHistory as useOldHistory } from 'react-router-dom';
-import { useRouterHelpers, Params } from '../useRouterHelpers/useRouterHelpers';
+
+import { useRouterHelpers, Params } from 'hooks/useRouterHelpers/useRouterHelpers';
 
 export const useHistory = () => {
   const { getRoute } = useRouterHelpers();

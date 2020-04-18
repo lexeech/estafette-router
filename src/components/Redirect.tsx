@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Redirect as OldRedirect } from 'react-router-dom';
-import { useRouterHelpers } from '../hooks/useRouterHelpers/useRouterHelpers';
+
+import { useRouterHelpers } from 'hooks/useRouterHelpers/useRouterHelpers';
 
 type Params = { [key: string]: any };
 

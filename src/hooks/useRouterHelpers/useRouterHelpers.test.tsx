@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { History, createBrowserHistory } from 'history';
 import { render } from '@testing-library/react';
+
+import { CreateRouter } from 'components/CreateRouter';
+
 import { useRouterHelpers } from './useRouterHelpers';
-import { CreateRouter } from '../../components/CreateRouter';
 
 interface Route {
   name: string;

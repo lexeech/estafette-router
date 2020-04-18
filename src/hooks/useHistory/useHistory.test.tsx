@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { createBrowserHistory } from 'history';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+
+import { CreateRouter, Routes } from 'components/CreateRouter';
+
 import { useHistory } from './useHistory';
-import { CreateRouter, Routes } from '../../components/CreateRouter';
-import { fireEvent } from '@testing-library/react';
 
 describe('useRouterHelpers()', () => {
   const history = createBrowserHistory({});

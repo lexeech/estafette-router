@@ -66,5 +66,12 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "libs/(.*)": "<rootDir>/src/libs/$1",
+      "hooks/(.*)": "<rootDir>/src/hooks/$1",
+      "components/(.*)": "<rootDir>/src/components/$1"
+    }
+  }
 }
