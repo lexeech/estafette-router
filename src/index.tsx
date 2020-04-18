@@ -6,4 +6,4 @@ export { useRouterHelpers, Params } from 'hooks/useRouterHelpers/useRouterHelper
 
 export { CreateRouter, Routes } from 'components/CreateRouter/CreateRouter';
 export { Redirect } from 'components/Redirect';
-export { Link } from 'components/Link';
+export { Link } from 'components/Link/Link';
