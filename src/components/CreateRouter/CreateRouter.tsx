@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { RoutesContext } from 'components/RoutesContext';
-import { RoutesGroup } from 'components/RoutesGroup';
-import { Route } from 'components/Route';
+import { RoutesContext } from '../RoutesContext';
+import { RoutesGroup } from '../RoutesGroup';
+import { Route } from '../Route';
 
 export interface Routes {
   name: string;

@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import { getRoute as getRouteFromRoutes, getRouteByPath as getRouteByPathFromRoutes } from 'libs/helpers/helpers';
-import { RoutesContext } from 'components/RoutesContext';
+import { getRoute as getRouteFromRoutes, getRouteByPath as getRouteByPathFromRoutes } from '../../libs/helpers/helpers';
+
+import { RoutesContext } from '../../components/RoutesContext';
 
 export type Params = { [key: string]: any };
 
