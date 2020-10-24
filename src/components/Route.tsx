@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route as OldRoute } from 'react-router-dom';
 
-import { Routes } from 'components/CreateRouter/CreateRouter';
+import { Routes } from './CreateRouter/CreateRouter';
 
 interface RouteProps extends Pick<Routes, Exclude<keyof Routes, 'name'>> {
   renderSuspense?: React.FC<any>;
