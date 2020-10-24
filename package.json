@@ -1,6 +1,6 @@
 {
   "name": "estafette-router",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "Estafette Router helps you write React Routes faster, safer and more convenient.",
   "author": "Vladimir \"lexeech\" Josan <iaskivsky@gmail.com>",
   "maintainers": [
