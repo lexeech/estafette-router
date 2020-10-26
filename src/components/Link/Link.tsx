@@ -11,9 +11,19 @@ interface Props {
   params?: Params;
   disabled?: boolean;
   className?: string;
+  onClick?: () => void;
 }
 
-export const Link: React.FC<Props> = ({ to, route, query = {}, params = {}, children, disabled, className = '' }) => {
+export const Link: React.FC<Props> = ({
+  to,
+  route,
+  query = {},
+  params = {},
+  children,
+  disabled,
+  className = '',
+  onClick,
+}) => {
   const { getRoute } = useRouterHelpers();
 
   // prettier-ignore
@@ -32,6 +42,7 @@ export const Link: React.FC<Props> = ({ to, route, query = {}, params = {}, chil
     <OldLink
       to={`${toLinkParam || ''}${Object.keys(query).length > 0 ? `${parseObject(query)}` : ''}`}
       className={className}
+      onClick={onClick}
     >
       {children}
     </OldLink>
