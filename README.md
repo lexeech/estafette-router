@@ -37,11 +37,11 @@ render(<CreateRouter routes={routes} />, document.getElementById('root'));
 
 ```jsx
 import * as React from 'react';
-import { Route } from 'estafette-router';
+import { Routes } from 'estafette-router';
 
 const IndexPage = (): React.ReactNode => <span>A regular page</span>;
 
-const routes: Route[] = [{ name: 'IndexPage', path: '/', exact: true, component: IndexPage }];
+const routes: Routes[] = [{ name: 'IndexPage', path: '/', exact: true, component: IndexPage }];
 ```
 
 #### Use Link, Redirect components
